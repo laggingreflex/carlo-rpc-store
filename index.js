@@ -21,7 +21,7 @@ module.exports = ({ rpc: rpcOpts = { id: 'carlo-rpc-store' }, undb: undbOpts = {
   const [db, onChange] = undb(undbOpts);
   const rpc = new RPCStore({ db, rpc: rpcOpts });
   onChange(() => {
-    rpc.remote.update(db);
+    rpc.remote.update(JSON.parse(JSON.stringify(db)));
   });
   return [db, onChange, rpc.loadParams(), rpc.remoteReady];
 };
