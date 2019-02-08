@@ -6,7 +6,7 @@ class RPCStore extends RPC {
     super({ id });
     this.db = db;
     this._remoteSetDefer.promise = this._remoteSetDefer.promise.then(() => {
-      return this.remote.update(this.db);
+      return this.remote.update(JSON.parse(JSON.stringify(this.db)));
     });
   }
   update(update) {
