@@ -42,3 +42,20 @@ npm i carlo-rpc-store
     })
     store.browser = 'value'
     ```
+
+### API
+
+```
+const [store, onChange, loadParams, remoteReady] = carloStore(opts)
+```
+
+* **`opts`**
+
+  * **`remote`** `(both|browser)[=both]` Whether to sync `both` ways or just update the `browser|node`
+  * **`rpc`** Options for [carlo-rpc-simple]
+  * **`undb`** Options for [undb]
+
+
+
+
+
